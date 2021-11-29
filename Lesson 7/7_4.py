@@ -13,7 +13,7 @@ for item in os.scandir(folder):
         if prev_key < cur_size < key:
             files_dict[key] += 1
             prev_key = key
-            print(prev_key)
+
 
 
 print(files_dict)
