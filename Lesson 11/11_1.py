@@ -66,9 +66,9 @@ class Computer(Player):
 
 class Game():
     def __init__(self, *players):
-        self.pool_list = random.sample([i for i in range(1, 91)], k=90)
-        while self.pool_list:
-            number = self.pool_list.pop()
+        self.pool_list = (x for x in random.sample([i for i in range(1, 91)], k=90))
+        while True:
+            number = next(self.pool_list)
             for player in players:
                 print(f'{player.name} Card: \n{player.card}')
                 answer = player.cross(number)
